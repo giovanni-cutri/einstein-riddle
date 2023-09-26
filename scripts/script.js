@@ -24,13 +24,13 @@ drinks.set("\uD83E\uDD5B", "&#129371;");
 drinks.set("\uD83C\uDF7A", "&#127866;");
 drinks.set("\uD83D\uDCA7", "&#128167;");
 
-var media = new Map();
-media.set("\u2753", "&#10067;");
-media.set("\uD83D\uDCDA", "&#128218;");
-media.set("\uD83C\uDF9E\uFE0F", "&#127902;&#65039;");
-media.set("\uD83C\uDFAE", "&#127918;");
-media.set("\uD83D\uDCFA", "&#128250;");
-media.set("\uD83C\uDFB5", "&#127925;");
+var hobbies = new Map();
+hobbies.set("\u2753", "&#10067;");
+hobbies.set("\uD83D\uDCDA", "&#128218;");
+hobbies.set("\uD83C\uDF9E\uFE0F", "&#127902;&#65039;");
+hobbies.set("\uD83C\uDFAE", "&#127918;");
+hobbies.set("\uD83D\uDCFA", "&#128250;");
+hobbies.set("\uD83C\uDFB5", "&#127925;");
 
 var animals = new Map();
 animals.set("\u2753", "&#10067;");
@@ -87,14 +87,14 @@ function change(evt) {
       }
       break;
 
-    case "medium":
-      let medium_flag = false;
-      for (let [key, value] of media) {
-        if (medium_flag == true) {
-          selected = media.get(key);
+    case "hobby":
+      let hobby_flag = false;
+      for (let [key, value] of hobbies) {
+        if (hobby_flag == true) {
+          selected = hobbies.get(key);
           break;
         } else if (key == current) {
-          medium_flag = true;
+          hobby_flag = true;
         }
       }
       break;
