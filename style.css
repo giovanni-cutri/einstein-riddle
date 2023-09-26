@@ -14,3 +14,7 @@ th[scope="row"] {
 span {
     font-size: 20px;
 }
+
+.list-group-item {
+    font-weight: bold;
+}
