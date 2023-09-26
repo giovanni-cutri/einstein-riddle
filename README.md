@@ -1,2 +1,2 @@
-# einstein-riddle
- An online version of the Einstein Riddle implemented with JavaScript.
+# Einstein's Riddle
+ An online version of the Einstein's Riddle implemented with JavaScript.
