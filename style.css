@@ -1,0 +1,16 @@
+th, td {
+    text-align: center;
+}
+
+th[scope="row"] {
+    vertical-align: middle;
+}
+
+.emoji {
+    font-size: 30px;
+    user-select: none;
+}
+
+span {
+    font-size: 20px;
+}
