@@ -40,177 +40,155 @@ animals.set("\uD83D\uDC31", "&#128049;");
 animals.set("\uD83D\uDC34", "&#128052;");
 animals.set("\uD83D\uDC1F", "&#128031;");
 
-
 options = document.getElementsByClassName("emoji");
-Array.from(options).forEach(colour_option => {
-    colour_option.addEventListener("click", change);
-    }
-);
-
+Array.from(options).forEach((colour_option) => {
+  colour_option.addEventListener("click", change);
+});
 
 function change(evt) {
+  type = evt.currentTarget.classList[1];
+  current = evt.currentTarget.innerHTML;
+  let selected = "";
 
-    type = evt.currentTarget.classList[1];
-    current = evt.currentTarget.innerHTML;
-    let selected = "";
-
-    switch(type) {
-
-        case "colour":
-            let colour_flag = false;
-            for (let [key, value] of colours) {
-                if (colour_flag == true) {
-                    selected = colours.get(key);
-                    break;
-                }
-                else if (key == current) {
-                    colour_flag = true;
-                }
-            }
-            break;
-
-        case "food":
-            let food_flag = false;
-            for (let [key, value] of foods) {
-                if (food_flag == true) {
-                    selected = foods.get(key);
-                    break;
-                }
-                else if (key == current) {
-                    food_flag = true;
-                }
-            }
-            break;
-
-        case "drink":
-            let drink_flag = false;
-            for (let [key, value] of drinks) {
-                if (drink_flag == true) {
-                    selected = drinks.get(key);
-                    break;
-                }
-                else if (key == current) {
-                    drink_flag = true;
-                }
-            }
-            break;
-
-        case "medium":
-            let medium_flag = false;
-            for (let [key, value] of media) {
-                if (medium_flag == true) {
-                    selected = media.get(key);
-                    break;
-                }
-                else if (key == current) {
-                    medium_flag = true;
-                }
-            }
-            break;
-
-        case "animal":
-            let animal_flag = false;
-            for (let [key, value] of animals) {
-                if (animal_flag == true) {
-                    selected = animals.get(key);
-                    break;
-                }
-                else if (key == current) {
-                    animal_flag = true;
-                }
-            }
-            break;
-    }
-
-    if (selected == "") {
-        selected = colours.get("\u2753");    // it doesn't matter which map we choose
-    }
-
-    evt.currentTarget.innerHTML = selected;
-};
-
-
-function equalsCheck(a, b) {
-
-    if (a.length != b.length) {
-        return false;
-    }
-    else {
-        let result = false;
-
-        for (let i = 0; i < a.length; i++) {
-
-            if (a[i] !== b[i]) {
-                return false;
-            }
-            
-            else {
-                result = true;
-            }
+  switch (type) {
+    case "colour":
+      let colour_flag = false;
+      for (let [key, value] of colours) {
+        if (colour_flag == true) {
+          selected = colours.get(key);
+          break;
+        } else if (key == current) {
+          colour_flag = true;
         }
+      }
+      break;
 
-        return result;
-    }
+    case "food":
+      let food_flag = false;
+      for (let [key, value] of foods) {
+        if (food_flag == true) {
+          selected = foods.get(key);
+          break;
+        } else if (key == current) {
+          food_flag = true;
+        }
+      }
+      break;
+
+    case "drink":
+      let drink_flag = false;
+      for (let [key, value] of drinks) {
+        if (drink_flag == true) {
+          selected = drinks.get(key);
+          break;
+        } else if (key == current) {
+          drink_flag = true;
+        }
+      }
+      break;
+
+    case "medium":
+      let medium_flag = false;
+      for (let [key, value] of media) {
+        if (medium_flag == true) {
+          selected = media.get(key);
+          break;
+        } else if (key == current) {
+          medium_flag = true;
+        }
+      }
+      break;
+
+    case "animal":
+      let animal_flag = false;
+      for (let [key, value] of animals) {
+        if (animal_flag == true) {
+          selected = animals.get(key);
+          break;
+        } else if (key == current) {
+          animal_flag = true;
+        }
+      }
+      break;
+  }
+
+  if (selected == "") {
+    selected = colours.get("\u2753"); // it doesn't matter which map we choose
+  }
+
+  evt.currentTarget.innerHTML = selected;
 }
 
-
-function check_solution(){
-
-    solution = [
-        "\uD83D\uDFE8",
-        "\uD83D\uDFE6",
-        "\uD83D\uDFE5",
-        "\uD83D\uDFE9",
-        "\u2B1C",
-        "\uD83C\uDF4E",
-        "\uD83C\uDF6A",
-        "\uD83C\uDF55",
-        "\uD83E\uDD5E",
-        "\uD83C\uDF5D",
-        "\uD83D\uDCA7",
-        "\uD83C\uDF75",
-        "\uD83E\uDD5B",
-        "\u2615",
-        "\uD83C\uDF7A",
-        "\uD83C\uDF9E\uFE0F",
-        "\uD83C\uDFAE",
-        "\uD83D\uDCDA",
-        "\uD83C\uDFB5",
-        "\uD83D\uDCFA",
-        "\uD83D\uDC31",
-        "\uD83D\uDC34",
-        "\uD83D\uDC26",
-        "\uD83D\uDC1F",
-        "\uD83D\uDC36"
-    ]
-
-    selection = document.getElementsByClassName("emoji");
-    choices = []
-    for (let i of selection) {
-        choices.push(i.innerHTML);
-    }
-
-    if (equalsCheck(choices, solution)){
-        return true;
-    }
-
+function equalsCheck(a, b) {
+  if (a.length != b.length) {
     return false;
+  } else {
+    let result = false;
+
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] !== b[i]) {
+        return false;
+      } else {
+        result = true;
+      }
+    }
+
+    return result;
+  }
+}
+
+function check_solution() {
+  solution = [
+    "\uD83D\uDFE8",
+    "\uD83D\uDFE6",
+    "\uD83D\uDFE5",
+    "\uD83D\uDFE9",
+    "\u2B1C",
+    "\uD83C\uDF4E",
+    "\uD83C\uDF6A",
+    "\uD83C\uDF55",
+    "\uD83E\uDD5E",
+    "\uD83C\uDF5D",
+    "\uD83D\uDCA7",
+    "\uD83C\uDF75",
+    "\uD83E\uDD5B",
+    "\u2615",
+    "\uD83C\uDF7A",
+    "\uD83C\uDF9E\uFE0F",
+    "\uD83C\uDFAE",
+    "\uD83D\uDCDA",
+    "\uD83C\uDFB5",
+    "\uD83D\uDCFA",
+    "\uD83D\uDC31",
+    "\uD83D\uDC34",
+    "\uD83D\uDC26",
+    "\uD83D\uDC1F",
+    "\uD83D\uDC36",
+  ];
+
+  selection = document.getElementsByClassName("emoji");
+  choices = [];
+  for (let i of selection) {
+    choices.push(i.innerHTML);
+  }
+
+  if (equalsCheck(choices, solution)) {
+    return true;
+  }
+
+  return false;
 }
 
 function submit() {
+  response = document.getElementById("response");
 
-    response = document.getElementById("response");
-
-    if (check_solution()) {
-        response.innerHTML = "Correct!";
-        response.style.color = "springgreen";
-    }
-    
-    else {
-        response.innerHTML = "Incorrect!";
-        response.style.color = "red";
-    }
-};
-
+  if (check_solution()) {
+    response.innerHTML = "Correct!";
+    response.style.color = "springgreen";
+  } else {
+    response.innerHTML = "Incorrect!";
+    response.style.color = "red";
+  }
+}
 
 document.getElementsByTagName("button")[0].addEventListener("click", submit);

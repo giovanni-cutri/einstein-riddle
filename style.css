@@ -1,20 +1,21 @@
-th, td {
-    text-align: center;
+th,
+td {
+  text-align: center;
 }
 
 th[scope="row"] {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 .emoji {
-    font-size: 30px;
-    user-select: none;
+  font-size: 30px;
+  user-select: none;
 }
 
 span {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .list-group-item {
-    font-weight: bold;
+  font-weight: bold;
 }
