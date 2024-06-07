@@ -1,3 +1,8 @@
+img {
+  height: 25px;
+  padding-right: 15px;
+}
+
 th,
 td {
   text-align: center;
